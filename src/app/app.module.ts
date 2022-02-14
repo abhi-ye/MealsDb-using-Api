@@ -11,6 +11,11 @@ import { mealsHomeComponent } from './mealsHome/mealsHome';
 import { mealsCardComponent } from './mealsCard/mealsCard';
 import { mealsDbService } from './services/mealsDb.service';
 
+// import { AngularFireModule } from '@angular/fire';
+// import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { environment } from '../environments/environment';
+import { AngularFireModule } from '@angular/fire/compat/firebase.app.module';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore/firestore.module';
 
 
 @NgModule({
@@ -21,7 +26,9 @@ import { mealsDbService } from './services/mealsDb.service';
     HttpClientModule,
     RouterModule.forRoot([
       { path: '', component: mealsHomeComponent },
-    ])
+    ]),
+    AngularFireModule.initializeApp(environment.firebase),
+ 	  AngularFirestoreModule,
   ],
   declarations: [
     AppComponent,

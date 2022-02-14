@@ -12,7 +12,7 @@ export class mealsHomeComponent implements OnInit {
 mealInfo= [] as  any;
 productsObservable!: Observable<any[]>;
 ngOnInit(){
-    for(var i=0; i<=50;i++){
+    for(var i=0; i<=8;i++){
       this.mealsDbService.getRandomMeal().subscribe( res=>{
          this.load(res);
      },
