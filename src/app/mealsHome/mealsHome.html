@@ -1,5 +1,5 @@
 <div>
-<div *ngfor="let meal of mealInfo">
-<meals-card [mealInfo]="mealInfo"></meals-card>
+<div class="row" *ngFor="let meal of mealInfo">
+  <div class="col-3"><meals-card [mealInfo]="meal"></meals-card></div>
 </div>
 </div>
