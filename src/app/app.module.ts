@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { RouterModule } from '@angular/router';
+import { AppRoutingModule } from './app.routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common'
@@ -11,11 +11,14 @@ import { mealsHomeComponent } from './mealsHome/mealsHome';
 import { mealsCardComponent } from './mealsCard/mealsCard';
 import { mealsDbService } from './services/mealsDb.service';
 
-// import { AngularFireModule } from '@angular/fire';
-// import { AngularFirestoreModule } from '@angular/fire/firestore';
+
+
 import { environment } from '../environments/environment';
-import { AngularFireModule } from '@angular/fire/compat/firebase.app.module';
-import { AngularFirestoreModule } from '@angular/fire/compat/firestore/firestore.module';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { AngularFireModule } from '@angular/fire/compat';
+import { LoginComponent } from './login/login.component';
+import { firebaseService } from './services/firebase.service';
+
 
 
 @NgModule({
@@ -24,9 +27,7 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore/firestore
     CommonModule,
     ReactiveFormsModule,
     HttpClientModule,
-    RouterModule.forRoot([
-      { path: '', component: mealsHomeComponent },
-    ]),
+    AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),
  	  AngularFirestoreModule,
   ],
@@ -34,9 +35,10 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore/firestore
     AppComponent,
     TopBarComponent,
     mealsHomeComponent,
-    mealsCardComponent
+    mealsCardComponent,
+    LoginComponent
   ],
-  providers: [mealsDbService],
+  providers: [mealsDbService, firebaseService],
   bootstrap: [
     AppComponent
   ]
