@@ -14,4 +14,13 @@ export class firebaseService {
       age: parseInt(value.age)
     });
   }
+  addMeal(meal){
+    return this.db.collection('meals').add({
+      idMeal: meal.idMeal,
+      strMeal: meal.strMeal,
+      strCategory: meal.strCategory,
+      strInstructions: meal.strInstructions,
+      strMealThumb: meal.strMealThumb
+    })
+  }
 }

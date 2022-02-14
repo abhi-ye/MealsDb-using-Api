@@ -17,7 +17,7 @@ export class LoginComponent implements OnInit {
     this.firebaseService.createUser(value)
     .then(
       res => {
-        console.log(res)
+        console.log(res+'---')
         // this.resetFields();
         // this.router.navigate(['/']);
       }
