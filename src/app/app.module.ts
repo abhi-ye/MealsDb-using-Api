@@ -18,6 +18,7 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { AngularFireModule } from '@angular/fire/compat';
 import { LoginComponent } from './login/login.component';
 import { firebaseService } from './services/firebase.service';
+import { FavMealsComponent } from './fav-meals/fav-meals.component';
 
 
 
@@ -36,7 +37,8 @@ import { firebaseService } from './services/firebase.service';
     TopBarComponent,
     mealsHomeComponent,
     mealsCardComponent,
-    LoginComponent
+    LoginComponent,
+    FavMealsComponent
   ],
   providers: [mealsDbService, firebaseService],
   bootstrap: [
